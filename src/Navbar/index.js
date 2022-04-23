@@ -20,17 +20,17 @@ export default function Navbar() {
                 noWrap
                 component="div"
                 sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-              />
+              >
                BugTracker
-               </Typography>
+             </Typography>
            </NavLink>
          </Toolbar>
 
        </Container>
 
 
-       --------------------------------------------------------------
        <Button
+         variant="contained"
          className="navbar-toggler"
          type="button"
          data-toggle="collapse"

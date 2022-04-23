@@ -25,7 +25,7 @@ export default function Create() {
 
     const newTicket = { ...form };
 
-    await fetch("http://localhost:5000/tickets/add", {
+    await fetch("http://localhost:5000/ticket/add", {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -62,7 +62,7 @@ export default function Create() {
             classname="form-control" 
             id="status" 
             value={form.status} 
-            onchange={(e) => updateform({ status: e.target.value }) }
+            onchange={(e) => updateForm({ status: e.target.value }) }
           />
         </div>
         <div classname="form-group">
@@ -72,7 +72,7 @@ export default function Create() {
             classname="form-control" 
             id="description" 
             value={form.description} 
-            onchange={(e) => updateform({ description: e.target.value }) }
+            onchange={(e) => updateForm({ description: e.target.value }) }
           />
         </div>
         <div classname="form-group">
@@ -82,7 +82,7 @@ export default function Create() {
             classname="form-control" 
             id="priority" 
             value={form.priority} 
-            onchange={(e) => updateform({ priority: e.target.value }) }
+            onchange={(e) => updateForm({ priority: e.target.value }) }
           />
         </div>
         <div classname="form-group">
@@ -92,14 +92,14 @@ export default function Create() {
             classname="form-control" 
             id="assigned_to" 
             value={form.assigned_to} 
-            onchange={(e) => updateform({ assigned_to: e.target.value }) }
+            onchange={(e) => updateForm({ assigned_to: e.target.value }) }
           />
         </div>
         <div className="form-group">
           <input 
             type="submit"
             value="Create ticket"
-            className="btn btn-primary"
+            className="btn-create"
           />
         </div>
       </form>

@@ -2,10 +2,10 @@ import React from "react";
  
 import { Route, Routes } from "react-router-dom";
  
-import Navbar from "Navbar";
-import TicketList from "TicketList";
-import Edit from "Edit";
-import Create from "Create";
+import Navbar from "./Navbar";
+import TicketList from "./TicketList";
+import Edit from "./Edit";
+import Create from "./Create";
  
 const App = () => {
  return (

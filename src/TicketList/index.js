@@ -9,8 +9,8 @@ const Ticket = (props) => (
    <td>{props.ticket.priority}</td>
    <td>{props.ticket.assigned_to}</td>
    <td>
-     <Link className="btn btn-link" to={`/edit/${props.ticket._id}`}>Edit</Link> |
-     <button className="btn btn-link"
+     <Link to={`/edit/${props.ticket._id}`}>Edit</Link> |
+     <button className="btn-link"
        onClick={() => {
          props.deleteTicket(props.ticket._id);
        }}
@@ -24,7 +24,6 @@ const Ticket = (props) => (
 export default function TicketList() {
  const [tickets, setTickets] = useState([]);
  
- // This method fetches the records from the database.
  useEffect(() => {
    async function getTickets() {
      const response = await fetch(`http://localhost:5000/ticket/`);
@@ -44,7 +43,6 @@ export default function TicketList() {
    return;
  }, [tickets.length]);
  
- // This method will delete a ticket 
  async function deleteTicket(id) {
    await fetch(`http://localhost:5000/${id}`, {
      method: "DELETE"
@@ -54,12 +52,11 @@ export default function TicketList() {
    setTickets(newTickets);
  }
  
- // This method will map out the tickets on the table
  function ticketList() {
    return tickets.map((ticket) => {
      return (
        <Ticket
-         ticket={ticketj}
+         ticket={ticket}
          deleteTicket={() => deleteTicket(ticket._id)}
          key={ticket._id}
        />
@@ -67,7 +64,6 @@ export default function TicketList() {
    });
  }
  
- // This following section will display the table with the records of individuals.
  return (
    <div>
      <h3>Ticket List</h3>
