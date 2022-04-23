@@ -1,19 +1,23 @@
-import * as React from "react";
-import { Routes, Route } from "react-router-dom";
-
-import Home from './Home';
-import Tickets from './Tickets';
-
-function App() {
-  return (
-    <div className="App">
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="tickets" element={<Tickets />} />
-      </Routes>
-    </div>
-  );
-}
-
+import React from "react";
+ 
+import { Route, Routes } from "react-router-dom";
+ 
+import Navbar from "Navbar";
+import TicketList from "TicketList";
+import Edit from "Edit";
+import Create from "Create";
+ 
+const App = () => {
+ return (
+   <div>
+     <Navbar />
+     <Routes>
+       <Route exact path="/" element={<RecordList />} />
+       <Route path="/edit/:id" element={<Edit />} />
+       <Route path="/create" element={<Create />} />
+     </Routes>
+   </div>
+ );
+};
+ 
 export default App;
