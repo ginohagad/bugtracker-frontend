@@ -5,7 +5,7 @@ export default function Create() {
 
   const [form, setForm] = useState({
     title: "",
-    status: "",
+    stat: "",
     description: "",
     priority: "",
     assigned_to: "",
@@ -25,7 +25,7 @@ export default function Create() {
 
     const newTicket = { ...form };
 
-    await fetch("http://localhost:5000/ticket/add", {
+    await fetch("http://localhost:5000/tickets/add", {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -37,7 +37,7 @@ export default function Create() {
       return;
     });
 
-    setForm({ title: "", status: "", description: "", priority: "", assigned_to: "" });
+    setForm({ title: "", stat: "", description: "", priority: "", assigned_to: "" });
     navigate("/");
   }
   
@@ -55,44 +55,44 @@ export default function Create() {
             onChange={(e) => updateForm({ title: e.target.value }) }
           />
         </div>
-        <div classname="form-group">
-          <label htmlfor="status">status</label>
+        <div className="form-group">
+          <label htmlFor="stat">Status</label>
           <input 
             type="text" 
-            classname="form-control" 
-            id="status" 
-            value={form.status} 
-            onchange={(e) => updateForm({ status: e.target.value }) }
+            className="form-control" 
+            id="stat" 
+            value={form.stat} 
+            onChange={(e) => updateForm({ stat: e.target.value }) }
           />
         </div>
-        <div classname="form-group">
-          <label htmlfor="description">Description</label>
+        <div className="form-group">
+          <label htmlFor="description">Description</label>
           <input 
             type="text" 
-            classname="form-control" 
+            className="form-control" 
             id="description" 
             value={form.description} 
-            onchange={(e) => updateForm({ description: e.target.value }) }
+            onChange={(e) => updateForm({ description: e.target.value }) }
           />
         </div>
-        <div classname="form-group">
-          <label htmlfor="priority">Priority</label>
+        <div className="form-group">
+          <label htmlFor="priority">Priority</label>
           <input 
             type="text" 
-            classname="form-control" 
+            className="form-control" 
             id="priority" 
             value={form.priority} 
-            onchange={(e) => updateForm({ priority: e.target.value }) }
+            onChange={(e) => updateForm({ priority: e.target.value }) }
           />
         </div>
-        <div classname="form-group">
-          <label htmlfor="assigned_to">Assigned To</label>
+        <div className="form-group">
+          <label htmlFor="assigned_to">Assigned To</label>
           <input 
             type="text" 
-            classname="form-control" 
+            className="form-control" 
             id="assigned_to" 
             value={form.assigned_to} 
-            onchange={(e) => updateForm({ assigned_to: e.target.value }) }
+            onChange={(e) => updateForm({ assigned_to: e.target.value }) }
           />
         </div>
         <div className="form-group">

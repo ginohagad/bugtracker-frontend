@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Ticket = (props) => (
  <tr>
    <td>{props.ticket.title}</td>
-   <td>{props.ticket.status}</td>
+   <td>{props.ticket.stat}</td>
    <td>{props.ticket.description}</td>
    <td>{props.ticket.priority}</td>
    <td>{props.ticket.assigned_to}</td>
@@ -26,10 +26,10 @@ export default function TicketList() {
  
  useEffect(() => {
    async function getTickets() {
-     const response = await fetch(`http://localhost:5000/ticket/`);
+     const response = await fetch(`http://localhost:5000/tickets/`);
  
      if (!response.ok) {
-       const message = `An error occurred: ${response.statusText}`;
+       const message = `An error occurred: ${response.statText}`;
        window.alert(message);
        return;
      }
@@ -67,7 +67,7 @@ export default function TicketList() {
  return (
    <div>
      <h3>Ticket List</h3>
-     <table className="table table-striped" style={{ marginTop: 20 }}>
+     <table className="table-ticketlist" style={{ marginTop: 20 }}>
        <thead>
          <tr>
            <th>Title</th>

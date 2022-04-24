@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router";
 export default function Edit() {
  const [form, setForm] = useState({
    title: "",
-   status: "",
+   stat: "",
    description: "",
    priority: "",
    assigned_to: "",
@@ -15,10 +15,10 @@ export default function Edit() {
  useEffect(() => {
    async function fetchData() {
      const id = params.id.toString();
-     const response = await fetch(`http://localhost:5000/ticket/${params.id.toString()}`);
+     const response = await fetch(`http://localhost:5000/tickets/${params.id.toString()}`);
  
      if (!response.ok) {
-       const message = `An error has occurred: ${response.statusText}`;
+       const message = `An error has occurred: ${response.statText}`;
        window.alert(message);
        return;
      }
@@ -48,7 +48,7 @@ export default function Edit() {
    e.preventDefault();
    const editedTicket = {
      title: form.title,
-     status: form.status,
+     stat: form.stat,
      description: form.description,
      priority: form.priority,
      assigned_to: form.assigned_to,
@@ -80,13 +80,13 @@ export default function Edit() {
          />
        </div>
        <div className="form-group">
-         <label htmlFor="status">Status: </label>
+         <label htmlFor="stat">Status: </label>
          <input
            type="text"
            className="form-control"
-           id="status"
-           value={form.status}
-           onChange={(e) => updateForm({ status: e.target.value })}
+           id="stat"
+           value={form.stat}
+           onChange={(e) => updateForm({ stat: e.target.value })}
          />
        </div>
        <div className="form-group">
