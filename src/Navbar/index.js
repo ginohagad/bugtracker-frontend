@@ -42,15 +42,9 @@ export default function Navbar() {
          <span className="navbar-toggler-icon"></span>
        </Button>
  
-       <div className="navbar-collapse" id="navbarSupportedContent">
-         <ul className="nav-items">
-           <li className="nav-item">
-             <NavLink className="nav-link" to="/create">
-               Create Ticket 
-             </NavLink>
-           </li>
-         </ul>
-       </div>
+       <NavLink className="nav-link" to="/create">
+         Create Ticket 
+       </NavLink>
      </AppBar>
    </div>
  );
