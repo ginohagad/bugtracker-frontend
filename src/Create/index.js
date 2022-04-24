@@ -46,7 +46,6 @@ export default function Create() {
       <h3>Create New Ticket</h3>
       <form onSubmit={onSubmit}>
 
-        {/*
         <div className="form-group">
           <label htmlFor="title">Title</label>
           <input 
@@ -57,7 +56,6 @@ export default function Create() {
             onChange={(e) => updateForm({ title: e.target.value }) }
           />
         </div>
-        */}
         <div className="form-group">
           <label htmlFor="stat">Status</label>
           <input 
